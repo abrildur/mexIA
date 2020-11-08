@@ -1,0 +1,51 @@
+body {
+  background-color: #000000;
+}
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -64.5px;
+    margin-top: -85.5px;
+    position: absolute;
+  }
+  
+  .ghost {
+    margin: 1rem 0rem 0rem 29.5rem;
+    animation: float 3s ease-out infinite;
+  }
+  
+  @keyframes float {
+    50% {
+       transform: translate(0, 20px);
+    }
+  }
+  .shadowFrame {
+    width: 130px;
+    margin-top: 35px;
+  }
+  .shadow {
+    /* margin: 0rem 0rem 0rem 30rem; */
+    /* margin: 8rem 0rem 0rem 30rem; */
+    animation: shrink 3s ease-out infinite;
+    /* transform-origin: center center; */
+  }
+  
+  @keyframes shrink {
+    0% {
+      width: 90%;
+      /* margin: 0 5%; */
+      margin: 0rem 1rem 0rem 30rem;
+    }
+    50% {
+      width: 60%;
+      /* margin: 0 18%; */
+      margin: 0rem 2rem 0rem 31rem;
+    }
+    100% {
+      width: 90%;
+      /* margin: 0 5%; */
+      margin: 0rem 1rem 0rem 30rem;
+    }
+  }

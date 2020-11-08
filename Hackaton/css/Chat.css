@@ -1,0 +1,20 @@
+.boxChax {
+    margin: 4rem 25rem 2rem 0rem;
+    /* margin-left: 64.5px;
+    margin-top: 85.5px; */
+}
+
+.descriptionClase {
+    margin: 0rem 28rem;
+    font-family: 'Syne Mono', Courier, monospace;
+    /* margin-left: 64.5px;
+    margin-top: 85.5px; */
+}
+
+.descriptionP{
+    margin: 0rem 25rem;
+    width: 30%;
+    font-family: 'Patrick Hand', cursive;
+}
+
+
