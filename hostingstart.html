@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <title>File Upload</title>
+    <link rel = "stylesheet"
+         href = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+      <script type = "text/javascript"
+         src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js">
+      </script>
+
+</head>
+  <body>
+    <div class="row">
+        <div class="col s12 m6 l3"> .  </div>
+        <div class="col s12 m2 l6 center">
+            <h1>File Upload</h1>
+            <form action="POST" action="http://127.0.0.1:5000/predict_image" id="formAjax" enctype="multipart/form-data">
+                <div class="file-field input-field">
+                    <div class="btn">
+                    <span>File</span>
+                    <input type="file" name="file" id="fileAjax" accept="image/*">
+                    </div>
+                    <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text">                  
+                    </div>
+                </div>     
+                <input type="submit" value="Submit" class=" btn">
+                    <p id="status">stats</p>                
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div id="imageDiv" class="center"></div>
+    </div>
+   
+        <div class = "container">
+        <ul class="collapsible" data-collapsible = "accordion">
+            <li>
+            <div class="collapsible-header"><i class="fas fa-skull" style="color: lightgreen;"></i>Bebida</div>
+            <div class="collapsible-body"><span class="center"><h6>Figuran varias bebidas para complementarlas: desde agua para calmar la sed, hasta chocolate caliente o tequila.
+                En México, a los muertos también se les celebra con tragos para acompañar los alimentos que se colocan en los altares.</h6></span></div>
+            </li>
+            <li>
+            <div class="collapsible-header"><i class="fas fa-skull" style="color: yellow;"></i>Calavera</div>
+            <div class="collapsible-body"><span><h6>Las calaveras fueron un poderoso símbolo en la cultura azteca, y algunas fueron utilizadas como tributo a Mictecacihuatl, la diosa de la muerte. Las calaveras o calaveritas y los esqueletos son imágenes que nos recuerdan que la muerte forma parte de la vida y lo importante de su aceptación. Estás suelen ser regaladas entre amigos o familiares y en la frente se coloca el nombre de la persona que la recibe.
+
+                Las calaveras colocadas en los altares son de diversos tamaños y diseños, y pueden estar elaboradas a base de yeso o de materiales comestibles como azúcar, chocolate, gelatina y amaranto.
+                
+                Es una manera de ver la muerte como algo dulce y no extraño o ajeno a la vida. La imagen de calavera más conocida o famosa es La Calavera Garbancera, de José Guadalupe Posada. </h6></span></div>
+            </li>
+            <li>
+            <div class="collapsible-header"><i class="fas fa-skull" style="color: orange;"></i>Cempasuchil</div>
+            <div class="collapsible-body"><span>La flor de cempasúchil obtiene su nombre del náhuatl y significa “Flor de veinte pétalos” y su significado en esta celebración es más profunda de lo que podrías creer. Ya que se dice, que es el color naranja de esta flor la que guía a los muertos de regreso a la tierra de los vivos.
+            Se dice también, que la flor misma tiene dentro de sí el calor del sol, que, junto al peculiar aroma de la flor misma, hace que los muertos regresen a sus hogares sin perderse.</span></div>
+            </li>
+            <li>
+            <div class="collapsible-header"><i class="fas fa-skull" style="color: blue;"></i>Comida</div>
+            <div class="collapsible-body"><span>El 1 y 2 de noviembre los mexicanos celebramos el Día de Muertos, siendo el primer día dedicado a los niños y el segundo a los adultos. En el 2003 la UNESCO declaró esta festividad como patrimonio de la humanidad.
+
+                Parte importante de esta celebración es levantar un altar de muertos. Se cree que en estas fechas las almas de los muertos visitan a sus familias para reconfortarlos por su ausencia y para disfrutar de la comida preparada que yace en su altar. </span></div>
+            </li>
+            <li>
+            <div class="collapsible-header"><i class="fas fa-skull" style="color: goldenrod;"></i>Elementos religiosos</div>
+            <div class="collapsible-body"><span>La festividad del Día de Muertos hoy día es el resultado de la mezcla de tradiciones prehispánicas y católicas, por eso, en los altares acostumbran a colocar objetos y figuras católicas como rosarios, imágenes de santos, vírgenes, ángeles, cruces o crucifijos.</span></div>
+            </li>
+            <li>
+            <div class="collapsible-header"><i class="fas fa-skull" style="color: magenta;"></i>Fruta</div>
+            <div class="collapsible-body"><span>Además, se incluyen frutas, las cuales tienen un significado: la manzana, por ejemplo, representa sangre y amabilidad, la calabaza significa las buenas relaciones sociales.</span></div>
+            </li>
+            <li>
+            <div class="collapsible-header"><i class="fas fa-skull" style="color: darkcyan;"></i>Pan de muerto</div>
+            <div class="collapsible-body"><span>El Pan de Muerto ha trascendido cientos de generaciones. La tradición se remonta desde la época de la Conquista, en donde los españoles trataron de reflejar una práctica, no tan bien vista, realizada por los nativos indígenas.Resulta que, tras realizar el sacrificio de una princesa como 'ofrenda' a los dioses, su corazón era depositado en una olla con amaranto, y el sacerdote, en forma de agradecimiento al dios, mordía el órgano, el cual aún se encontraba latiendo. Los españoles decidieron 'sustituir' dicha tradición, elaborando un pan de trigo en forma de 'corazón', adornado con azúcar pintada de rojo, para con ello simular la sangre.</span></div>
+            </li>
+            <li>
+            <div class="collapsible-header"><i class="fas fa-skull" style="color: red;"></i>Papel picado</div>
+            <div class="collapsible-body"><span>El papel picado es una tradición que se conserva de las costumbres aztecas para la elaboración del altar; sin embargo, con la colonización, se modificó el tipo de papel a usar y se sumaron más colores.
+
+                El uso del papel consiste en pintar o cortar las siluetas de calaveras, lápidas, palabras relacionadas con el Día de Muertos, entre otros. Los colores más empleados son el amarillo o naranja y el morado.
+                
+                En la actualidad, estos papeles se consiguen de diversos colores y con los diseños realizados basados en las caricaturas de José Guadalupe Posada.
+                
+                Generalmente estos papeles se unen a través de un hilo con el fin de formar una guirnalda que se cuelga o se coloca en diversas partes del altar.</span></div>
+            </li>
+            <li>
+            <div class="collapsible-header"><i class="fas fa-skull" style="color: cyan;"></i>Retrato</div>
+            <div class="collapsible-body"><span>Una fotografía del ser querido quiere decir que él será el que visitará la ofrenda..</span></div>
+            </li>
+        </ul>
+        </div>
+    </div>
+  </body>
+  <script src="./funciones.js"></script> 
+
+</html>

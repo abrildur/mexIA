@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Detecta tu altar</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+        <link rel="stylesheet" href="{{ url_for("static", filename="./CSS/header.css") }}">
+        <link rel="stylesheet" href="{{ url_for("static", filename="./CSS/ofrenda.css") }}">
+        <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Indie+Flower&family=Patrick+Hand&family=Syne+Mono&display=swap" rel="stylesheet"> 
+        <style type="text/css">
+            body{
+                background-image: url("{{ url_for("static", filename="./Imagenes/gifback1corto.gif") }}");
+            }
+          </style>
+        <!-- Diseño de Card -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body style="background-color: black;">
+        <header class="toolBar">
+            <div class="logo" >
+                <img class="logoimage" src="{{ url_for("static", filename="./Imagenes/calavera.png") }}">
+            </div>
+            <nav class="tabs">
+                <div class="selector" style="width: 194.906px; left: 519.969px;"></div>
+                <a onclick="moverseAPagina( './' )"><i class="fas fa-home"></i>Inicio</a>
+                <a onclick="moverseAPagina( './' )"><i class="fas fa-globe"></i>Un poco de historia</a>
+                <a onclick="moverseAPagina( './boobot' )"><i class="fas fa-skull"></i>BoooBot</a>
+                <a href="#" class="active"><i class="fas fa-eye"></i>Detecta tu altar</a>
+                <a onclick="moverseAPagina( './acercade' )" target="_blank">Acerca de</a>
+            </nav>
+        </header>
+     
+        <div class="divUploadFile" style="padding: 50rem 0rem 0rem;">
+            <h1 style="color:white; text-align: center; font-family: 'Syne Mono', Courier, monospace;">File Upload</h1>
+            <form action="POST" action="http://127.0.0.1:5000/predict_image" id="formAjax" enctype="multipart/form-data">
+                    <p style="color:white; text-align: center; font-family: 'Patrick Hand', cursive;">Sube la foto de tu ofrenda y deja que nuestro sistema identifique los elementos que contiene! Además te proporcionaremos una breve explicación de algunos objetos que no pueden faltar</p>
+                    <div class='file-input'>
+                        <input type="file" name="file" id="fileAjax" accept="image/*">
+                        <span class="button botonesOfrenda" style="color: black;">Adjunta la foto de tu ofrenda</span>
+                        <span class="label" style="color: white;" data-js-label>No file selected</span>
+                    </div>                      
+                <input type="submit" value="Submit" class="btn botonesOfrenda">
+                    <p id="status">stats</p>                
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="center">
+                <img src="{{ url_for("static", filename="./Imagenes/out.jpg") }}" id="imageDiv"  width='500' height='400'  ></img>
+            </div>
+        </div>
+
+        <div class="card" style="width: 60rem; background-color: rgba(204, 203, 203, 0.842);">
+            <div class="card-body">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <i class="fas fa-skull" style="color: lightgreen;"></i>
+                                <button class="btn botonElementoOfrenda" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Bebida
+                                </button>
+                            </h5>
+                        </div>
+                  
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body fontClasBody">
+                            Figuran varias bebidas para complementarlas: desde agua para calmar la sed, hasta chocolate caliente o tequila.
+                            En México, a los muertos también se les celebra con tragos para acompañar los alimentos que se colocan en los altares.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <i class="fas fa-skull" style="color: yellow;"></i>
+                                <button class="btn collapsed botonElementoOfrenda" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Calavera
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body fontClasBody">
+                            Las calaveras fueron un poderoso símbolo en la cultura azteca, y algunas fueron utilizadas como tributo a Mictecacihuatl, la diosa de la muerte. Las calaveras o calaveritas y los esqueletos son imágenes que nos recuerdan que la muerte forma parte de la vida y lo importante de su aceptación. Estás suelen ser regaladas entre amigos o familiares y en la frente se coloca el nombre de la persona que la recibe.
+                            Las calaveras colocadas en los altares son de diversos tamaños y diseños, y pueden estar elaboradas a base de yeso o de materiales comestibles como azúcar, chocolate, gelatina y amaranto.
+                            Es una manera de ver la muerte como algo dulce y no extraño o ajeno a la vida. La imagen de calavera más conocida o famosa es La Calavera Garbancera, de José Guadalupe Posada.                        
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <i class="fas fa-skull" style="color: orange;"></i>
+                                <button class="btn collapsed botonElementoOfrenda" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Cempasuchil
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body fontClasBody">
+                            La flor de cempasúchil obtiene su nombre del náhuatl y significa “Flor de veinte pétalos” y su significado en esta celebración es más profunda de lo que podrías creer. Ya que se dice, que es el color naranja de esta flor la que guía a los muertos de regreso a la tierra de los vivos.
+                            Se dice también, que la flor misma tiene dentro de sí el calor del sol, que, junto al peculiar aroma de la flor misma, hace que los muertos regresen a sus hogares sin perderse.                    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFour">
+                            <h5 class="mb-0">
+                                <i class="fas fa-skull" style="color: blue;"></i>
+                                <button class="btn collapsed botonElementoOfrenda" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+                                    Comida
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                            <div class="card-body fontClasBody">
+                            El 1 y 2 de noviembre los mexicanos celebramos el Día de Muertos, siendo el primer día dedicado a los niños y el segundo a los adultos. En el 2003 la UNESCO declaró esta festividad como patrimonio de la humanidad.
+                            Parte importante de esta celebración es levantar un altar de muertos. Se cree que en estas fechas las almas de los muertos visitan a sus familias para reconfortarlos por su ausencia y para disfrutar de la comida preparada que yace en su altar.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingFive">
+                            <h5 class="mb-0">
+                                <i class="fas fa-skull" style="color: goldenrod;"></i>
+                                <button class="btn collapsed botonElementoOfrenda" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">
+                                    Elementos religiosos
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                            <div class="card-body fontClasBody">
+                            La festividad del Día de Muertos hoy día es el resultado de la mezcla de tradiciones prehispánicas y católicas, por eso, en los altares acostumbran a colocar objetos y figuras católicas como rosarios, imágenes de santos, vírgenes, ángeles, cruces o crucifijos.                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingSix">
+                            <h5 class="mb-0">
+                                <i class="fas fa-skull" style="color: magenta;"></i>
+                                <button class="btn collapsed botonElementoOfrenda" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseThree">
+                                    Fruta
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                            <div class="card-body fontClasBody">
+                            Además, se incluyen frutas, las cuales tienen un significado: la manzana, por ejemplo, representa sangre y amabilidad, la calabaza significa las buenas relaciones sociales.        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingSeven">
+                            <h5 class="mb-0">
+                                <i class="fas fa-skull" style="color: darkcyan;"></i>
+                                <button class="btn collapsed botonElementoOfrenda" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseThree">
+                                    Pan de muerto
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                            <div class="card-body fontClasBody">
+                            El Pan de Muerto ha trascendido cientos de generaciones. La tradición se remonta desde la época de la Conquista, en donde los españoles trataron de reflejar una práctica, no tan bien vista, realizada por los nativos indígenas.Resulta que, tras realizar el sacrificio de una princesa como 'ofrenda' a los dioses, su corazón era depositado en una olla con amaranto, y el sacerdote, en forma de agradecimiento al dios, mordía el órgano, el cual aún se encontraba latiendo. Los españoles decidieron 'sustituir' dicha tradición, elaborando un pan de trigo en forma de 'corazón', adornado con azúcar pintada de rojo, para con ello simular la sangre.                    
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingEigth">
+                            <h5 class="mb-0">
+                                <i class="fas fa-skull" style="color: red;"></i>
+                                <button class="btn collapsed botonElementoOfrenda" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseThree">
+                                Papel picado
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseEight" class="collapse" aria-labelledby="headingEigth" data-parent="#accordion">
+                            <div class="card-body fontClasBody">
+                                El papel picado es una tradición que se conserva de las costumbres aztecas para la elaboración del altar; sin embargo, con la colonización, se modificó el tipo de papel a usar y se sumaron más colores.
+                                El uso del papel consiste en pintar o cortar las siluetas de calaveras, lápidas, palabras relacionadas con el Día de Muertos, entre otros. Los colores más empleados son el amarillo o naranja y el morado.
+                                En la actualidad, estos papeles se consiguen de diversos colores y con los diseños realizados basados en las caricaturas de José Guadalupe Posada.                     
+                                Generalmente estos papeles se unen a través de un hilo con el fin de formar una guirnalda que se cuelga o se coloca en diversas partes del altar.         
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingNine">
+                            <h5 class="mb-0">
+                                <i class="fas fa-skull" style="color: cyan;"></i>
+                                <button class="btn collapsed botonElementoOfrenda" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseThree">
+                                    Retrato
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion">
+                            <div class="card-body fontClasBody">
+                            Una fotografía del ser querido quiere decir que él será el que visitará la ofrenda.                    
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>     
+    </body>
+    <script src="{{ url_for("static", filename="./Scripts/Links.js") }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ url_for("static", filename="./Scripts/header.js") }}"></script>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{{ url_for("static", filename="./Scripts/ofrenda.js") }}"></script>
+    <script src="{{ url_for("static", filename="./Scripts/funciones.js") }}"></script>
+</html>
