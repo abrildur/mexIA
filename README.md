@@ -3,7 +3,7 @@ Pagina web relacionada con Azure (Chatbot y Cognitive Services) sobre el dia de 
 Proyecto desarrollado para el Hackaton de Innovacción Virtual México. 
 Pagina principal
 ![imagen1](./Hackaton/Imagenes/Captura.PNG)
-![imagen2](./Hackaton/Imagenes/Captura2.PNG)
+![imagen2](./Hackaton/Imagenes/captura2.PNG)
 
 Sobre las Deidades
 ![imagen3](./Hackaton/Imagenes/Captura3.PNG)
