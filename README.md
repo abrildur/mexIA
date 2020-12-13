@@ -26,11 +26,15 @@ Haciendo uso de la inteligencia artificial, creamos un ChatBot (BoooBot) el cual
 ### Boobot
 Funcionamiento de nuestro querido boobot, demasiado amigable:
 ![imagen6](./Hackaton/Imagenes/Captura4.PNG)
-
+Preguntando sobre gastronomía de día de muertos
+![imagen7](./Hackaton/Imagenes/boobot1.png)
+![imagen8](./Hackaton/Imagenes/boobot2.png)
 ### Detecta tu altar
 Funcionamiento de la detección de los elementos en altares de muerto:
+#### Primer ejemplo
 ![imagen7](./Hackaton/Imagenes/Captura8.png)
-
+#### Segundo ejemplo
+![imagen7](./Hackaton/Imagenes/altar2.png)
 
 ## ¿Cómo lo hace?
 Se hizo uso del lenguaje Python para realizar la parte de reconocimiento de objetos en las ofrendas con ayuda de la herramienta Custom Vision de Azure. Para la parte del boooBot se creó una base en QnA con aproximadamente 50 preguntas sobre temas de varias categorías.
