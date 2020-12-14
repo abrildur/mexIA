@@ -26,7 +26,7 @@ const styleOptions = {
  window.WebChat.renderWebChat(
     {
        directLine: window.WebChat.createDirectLine({
-        secret: 'XerIaqvN41w.TMJ1Kya3h84iAvQTjyHr6_jFnaqs4QpXOXO5jCcUybA'
+        secret: 'bXJYgAFXucg.Jmy08sOP0k_7XIs28JwGFxX7sfOuk6M-NJE0fxEeMxI'
        }),
 
        styleOptions
